@@ -2,3 +2,11 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+:root {
+  --h1-font-sixe: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --title-size: 18px;
+  --page-pg: 10px;
+  --main-gap: 50px;
+  --header-margin: 60px;
+}

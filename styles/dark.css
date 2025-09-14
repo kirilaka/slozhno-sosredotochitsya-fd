@@ -3,10 +3,47 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+.theme-dark .decorative_element {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  top: 0;
+  right: 9px;
+}
+
+.theme-dark .decorative_element_text {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #FF0070;
+}
+
+.theme-dark .decorative_element_item {
+  align-self: center;
+  block-size: 9px;
+  inline-size: 9px;
+  border-radius: 50%;
+  background-color: #FF0070;
+  box-shadow: 0px 0px 4px 2px #FF0070;
+}
+/*
+.theme-dark .header__theme-menu-item:last-child {
+  border: 1px solid var(--section-title-color);
+}*/
 
 :root.theme-dark {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --page-bg: url(../images/cover-image-dark.png);
+  --accent-color: #FF0070;
+  --h1-color: #DB00FF;
+  --title-bg: #FF0070;
+  --title-color: #000028;
+  --section-title-color: #FF0070;
+  --section-text-color: #F1B2CE;
 }
