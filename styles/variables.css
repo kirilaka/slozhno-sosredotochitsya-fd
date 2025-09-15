@@ -6,6 +6,8 @@
 :root {
   --h1-font-sixe: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --title-size: 18px;
+  --menu-border-color: #FF007066;
+  --page-bg: #000028;
   --page-pg: 10px;
   --main-gap: 50px;
   --header-margin: 40px;
