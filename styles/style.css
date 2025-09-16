@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  background-color: var(--page-bg);
+  background-color: var(--page-bg-color);
   background-image: var(--page-bg);
   background-position: center;
   background-size: cover;
@@ -20,10 +20,8 @@
 }
 
 .decorative_element_text {
-  display: block;
+  display: var(--decorative_element-display);
   position: absolute;
-  display: flex;
-  flex-direction: row;
   top: var(--location);
   right: 28px;
   font-family: 'IBM Plex Mono', sans-serif;
@@ -119,14 +117,9 @@
   gap: var(--main-gap);
 }
 
-.section {
+.section,
+.block-How {
   display: grid;
-  gap: 20px;
-}
-
-.list_card {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 }
 
@@ -207,19 +200,21 @@
   border: 1px solid var(--section-text-color);
 }
 
-.theme-light .decorative_element {
-  display: none;
-}
-
-.theme-light .header__theme-menu-item:active {
+.header__theme-menu-item:active {
   border: 1px solid var(--section-title-color);
 }
 
 .header__theme-menu-button_active {
-    pointer-events: none;
-    border: 1px solid var(--menu-border-color);
-  }
+  pointer-events: none;
+  border: 1px solid var(--section-title-color );
+}
 
+.block-content { 
+  display: grid;
+  gap: 20px;
+}
+
+  
 @media (width >= 768px) {
   .header {
     grid-template-columns: 1fr 1fr;
@@ -250,59 +245,19 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .blocks-why,
+  .block-How {
+    grid-column: 2 / -1;
+    padding-left: 7px;
+  }
+
+  .blocks-cause {
+    grid-column: span 3;
+  }
+
   .section_title {
     grid-column: 1;
     grid-row: 1;
-  }
-
-  .card {
-    grid-column: 2 / 4;
-    grid-row: span 2;
-  }
-
-  .card {
-    margin-inline-start: 7px;
-  }
-
-  .title-decor-tostep {
-    margin-inline-start: 7px;
-  }
-
-  .list_card {
-    grid-column: 2 / 4;
-  }
-
-  .accent_section {
-    grid-template-rows: min-content 1fr;
-  }
-
-  .accent_section .card {
-    margin: 0;
-  }
-
-  .accent_section:first-child {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .accent_section .card:nth-child(2) {
-    grid-column: span 3;
-    grid-row: 2;
-  }
-
-  .accent_section .card:nth-child(3) {
-    grid-column: span 3;
-    grid-row: 3;
-  }
-
-  .accent_section .card:nth-child(4) {
-    grid-column: span 3;
-    grid-row: 4;
-  }
-
-  .accent_list_card {
-    grid-row: 2;
-    grid-column: span 3;
   }
 
   .section_card_image {
@@ -381,31 +336,18 @@
     align-self: flex-start;
     justify-self: center;
     grid-column: span 2;
-    margin-block-start: 20px;
   }
 
-  .accent_section {
-    grid-template-rows: min-content 1fr;
+  .block-content {
+    padding-left: 0;
   }
 
-  .accent_section:first-child {
-    grid-column: 1;
-    grid-row: 1;
+  .blocks-cause {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .accent_section .card:nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .accent_section .card:nth-child(3) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .accent_section .card:nth-child(4) {
-    grid-column: 3;
-    grid-row: 2;
+  .blocks-cause .card {
+    grid-auto-flow: row;
   }
 
   .footer {
